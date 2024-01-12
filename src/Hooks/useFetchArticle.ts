@@ -28,7 +28,7 @@ export const useFetchArticle = () => {
         setLoading(true);
 
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?language=en&q=sports&page=${page}&pageSize=12&apiKey=733a25b58ad641ab80e662838427ccb5`
+          `https://newsapi.org/v2/everything?language=en&q=sports&page=${page}&pageSize=12&apiKey=8d1f622b778e4d8d91422a5c6c856f4f`
         );
 
         setArticles((prevArticles) =>
@@ -52,7 +52,7 @@ export const useFetchArticle = () => {
     const getSubArticle = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines/sources?category=${queryNavbar}&apiKey=733a25b58ad641ab80e662838427ccb5`
+          `https://newsapi.org/v2/top-headlines/sources?category=${queryNavbar}&apiKey=8d1f622b778e4d8d91422a5c6c856f4f`
         );
         const dataArticle = response.data.sources;
         console.log("tessub", dataArticle);
