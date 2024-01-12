@@ -1,4 +1,3 @@
-import React from "react";
 import { useFetchArticle } from "@/Hooks/useFetchArticle";
 import { Link } from "react-router-dom";
 
