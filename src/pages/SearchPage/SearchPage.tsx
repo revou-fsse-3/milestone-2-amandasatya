@@ -57,11 +57,11 @@ const ArticleSearch: React.FC = () => {
 
               <div className="flex flex-col gap-2 p-4">
                 <h3 className="text-lg font-semibold mb-2">
-                  {truncateText(result.title, 5)}
+                  {truncateText(result.title, 4)}
                 </h3>
                 <div className="flex gap-2">
                   <div className=" text-black rounded-sm px-2 py-1 text-sm">
-                    {truncateText(result.description, 10)}
+                    {truncateText(result.description, 15)}
                   </div>
                 </div>
               </div>
