@@ -7,7 +7,7 @@ export const SearchArticle = async (query: string) => {
     }
 
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?language=en&q=${query}&apiKey=07b4f57da98a483daa4ded0da1cdffe5`
+      `https://newsapi.org/v2/everything?language=en&q=${query}&apiKey=733a25b58ad641ab80e662838427ccb5`
     );
     console.log("Response:", response);
     return response.data.articles;

@@ -1,5 +1,3 @@
-// ArticleSearch.tsx
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SearchArticle } from "@/Hooks/useSearchArticle";
@@ -45,39 +43,41 @@ const ArticleSearch: React.FC = () => {
       const id = result.url;
 
       return (
-        <div
-          key={id}
-          className="mb-4 p-4 sm:w-full md:w-full lg:w-full xl:w-full"
-        >
-          <div className="bg-white h-full rounded-lg flex flex-col justify-between shadow-md transition duration-300 transform hover:scale-105">
-            <img
-              src={result.urlToImage}
-              alt={result.urlToImage}
-              className="object-cover h-44 w-full rounded-lg mb-4"
-            />
+        <div>
+          <div
+            key={id}
+            className="mb-4 p-4 sm:w-full md:w-full lg:w-full xl:w-full"
+          >
+            <div className="bg-white h-full rounded-lg flex flex-col justify-between shadow-md transition duration-300 transform hover:scale-105 grayscale hover">
+              <img
+                src={result.urlToImage}
+                alt={result.urlToImage}
+                className="object-cover h-44 w-full rounded-lg mb-4"
+              />
 
-            <div className="flex flex-col gap-2 p-4">
-              <h3 className="text-lg font-semibold mb-2">
-                {truncateText(result.title, 5)}
-              </h3>
-              <div className="flex gap-2">
-                <div className=" text-black rounded-sm px-2 py-1 text-sm">
-                  {truncateText(result.description, 10)}
+              <div className="flex flex-col gap-2 p-4">
+                <h3 className="text-lg font-semibold mb-2">
+                  {truncateText(result.title, 5)}
+                </h3>
+                <div className="flex gap-2">
+                  <div className=" text-black rounded-sm px-2 py-1 text-sm">
+                    {truncateText(result.description, 10)}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <Link
-              to={`/articledetail/${encodeURIComponent(id)}`}
-              state={result}
-            >
-              <Button
-                onClick={() => handlePageChange(id)}
-                className="bg-black text-white rounded-md py-2 mt-4 hover:bg-gray-800 w-full"
+              <Link
+                to={`/articledetail/${encodeURIComponent(id)}`}
+                state={result}
               >
-                Read More
-              </Button>
-            </Link>
+                <Button
+                  onClick={() => handlePageChange(id)}
+                  className="bg-black text-white rounded-md py-2 mt-4 hover:bg-gray-800 w-full"
+                >
+                  Read More
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       );
@@ -102,8 +102,9 @@ const ArticleSearch: React.FC = () => {
           value={searchQuery}
           onChange={(e) => setsearchQuery(e.target.value)}
         />
+        <h1 className="text-center text-gray-600">ex: tesla or arsenal</h1>
         <svg
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
+          className="absolute left-3 top-1/3 transform -translate-y-1/2 h-5 w-5 text-gray-500"
           fill="none"
           stroke="currentColor"
           xmlns="http://www.w3.org/2000/svg"

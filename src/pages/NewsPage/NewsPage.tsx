@@ -13,7 +13,7 @@ const NewsPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10 min-h-screen">
+    <div className="container mx-auto mt-5 min-h-screen">
       <h1 className="flex justify-center items-center text-center text-2xl font-serif font-bold p-5">
         News from around the world
       </h1>
@@ -50,7 +50,7 @@ const NewsPage: React.FC = () => {
         </div>
       </div>
 
-      {!loading && (
+      {/* {!loading && (
         <div className="flex justify-center mt-4">
           <Button
             className="mx-2"
@@ -60,7 +60,7 @@ const NewsPage: React.FC = () => {
             Load More
           </Button>
         </div>
-      )}
+      )} */}
 
       <div className="flex justify-center items-center text-white">{`Page ${page} of ${totalPages}`}</div>
     </div>

@@ -1,19 +1,18 @@
-// App.tsx
-
-import NewsPage from "./pages/NewsPage/NewsPage";
-import PageDetails from "./pages/PageDetails/PageDetails";
-import ArticleSearch from "./pages/SearchPage/SearchPage";
-import ArticleDetails from "./pages/SearchPage/DetailSearch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import HomePage from "./pages/HomePage/HomePage";
-import SubPage from "./pages/SubPage/SubPage";
-
+import {
+  ArticleSearch,
+  ArticleDetails,
+  Navbar,
+  HomePage,
+  SubPage,
+  Footer,
+  PageDetails,
+  NewsPage,
+} from "./pages/index";
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/search" element={<ArticleSearch />} />
         <Route
           path="/"
           element={
@@ -22,6 +21,7 @@ export default function App() {
               <HomePage />
               <ArticleSearch />
               <NewsPage />
+              <Footer />
             </>
           }
         />
