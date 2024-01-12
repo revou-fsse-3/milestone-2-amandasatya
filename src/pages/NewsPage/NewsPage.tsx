@@ -4,8 +4,7 @@ import { useFetchArticle } from "../../Hooks/useFetchArticle";
 import { useNavigate } from "react-router-dom";
 
 const NewsPage: React.FC = () => {
-  const { articles, totalPages, page, truncate, loading, handleLoadMore } =
-    useFetchArticle();
+  const { articles, totalPages, page, truncate } = useFetchArticle();
   const navigate = useNavigate();
 
   const handleDetailedArticle = (url: string) => {
